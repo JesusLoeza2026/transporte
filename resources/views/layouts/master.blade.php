@@ -18,7 +18,18 @@
 	<!-- menu styles -->
 	<link rel="stylesheet" type="text/css" href="ad/css/component.css" />
     <script src="ad/js/modernizr-custom.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+	{{-- <link rel="stylesheet" href="css/bootstrap.min.css"> --}}
+    <link rel="stylesheet" type="text/css" href="dist/semantic.css">
+	<link rel="stylesheet" type="text/css" href="kitchensink.css">
+    <link rel="stylesheet" href="css/recurso.css">
+	<script src="js/jquery2.0.3.js"></script>
+	<script src="js/jquery.address-1.5.js"></script>
+	<link rel="stylesheet" href="sweetAlert2/sweetalert2.min.css">  
+  
+
+	<!-- Used with Tab History !-->
+	
+	<script src="js/semantic.js"></script>
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="sweetAlert2/sweetalert2.min.css"> 
     <script src="js/vue.js"></script>
@@ -139,6 +150,39 @@
 		}
 	})();
 	</script>
+	<style type="text/css">
+		.transition.demo .button {
+		  margin-bottom: 0.5em;
+		}
+		</style>
+		<script type="text/javascript">
+		$(document)
+		  .ready(function(){
+			$('.transition.demo .button')
+			  .on('click', function() {
+				var animation = $(this).text();
+				if(typeof animation == 'string') {
+				  animation = animation.toLowerCase();
+				}
+				$('.transition.demo .image')
+				  .each(function(index, value){
+					var $this = $(this);
+					setTimeout(function() {
+					  $this.transition(animation);
+					}, index * 100)
+				  })
+				;
+			  })
+			;
+		  })
+		;
+		</script>
+		
+<script src="js/recurso.js"></script>
+ <!--    Plugin sweet Alert 2  -->
+ <script src="sweetAlert2/sweetalert2.all.min.js"></script>
+
+
 </body>
 
 </html>

@@ -31,6 +31,7 @@ Route::view('admichoferrr','chofer.administrar');
 // ZONA DE TRANSPORTE
 Route::view('detalles','transporte.detalles');
 Route::apiResource('apiUsu','UsuController');
+Route::apiResource('apiCambio','CambioController');
 Route::apiResource('apiAuto','AutoController');
 // FIN ZONA TRANSPORTE
 Route::get('error', function () {

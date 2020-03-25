@@ -7,28 +7,38 @@
 	}
 	
 </style>
+
 <br>
 <h3>DETALLES</h3>
 <div id="detalles">
 	      <div class="row animated zoomIn delay-0s col-xs-7 c" v-if="editando==true" >
 
-	      	<h3> EDITANDO</h3>
-	      	<br>
-	     
-	      		<input type="text" placeholder="Codigo" class="form-control" v-model="id_auto"><br>
-	      		<input type="text" placeholder="Nombre" class="form-control" v-model="nombre"><br>
-	      		<input type="text" placeholder="Asientos" class="form-control" v-model="cantidad"><br>
-	      		<input type="text" placeholder="Activo" class="form-control" v-model="activo"><br><br>
-				  <button class="btn btn-success" v-on:click="actualizarA(auxid)">Guardar Cambios</button>
-				  <button class="btn btn-warning" v-on:click="editando=false">Cancelar</button>
+	      		<h3> EDITANDO</h3>
+	      		<br>
+	<div class="ui grid">
+		<div class="six wide column">
+			<div class="ui form ">
+				
+				<input type="text" placeholder="Codigo" v-model="id_auto"><br>
+				<input type="text" placeholder="Nombre" v-model="nombre"><br>
+				<input type="text" placeholder="Asientos" v-model="cantidad"><br>
+				<input type="text" placeholder="Activo"  v-model="activo"><br><br>
+	
+			</div>
+	
+		</div>
+
+	</div>
+				  <button class="ui primary button" v-on:click="actualizarA(auxid)">Guardar Cambios</button>
+				  <button class="ui button" v-on:click="editando=false">Cancelar</button>
             </div>
-            <div>
+<div>
       
 
 
 
 
-		  </div>
+ </div>
 		 
 
 
@@ -61,7 +71,7 @@
 
 
 
-        <table class="table table-light table-bordered animated fadeIn delay-0s">
+        <table class="ui celled table">
 				
 				<thead>
 
@@ -83,17 +93,16 @@
 					<td>@{{au.activo}}</td>
 					<td>
 						
-						<span class="glyphicon glyphicon-edit" v-on:click="showAuto(au.id_auto)"></span>
-						<span class="glyphicon glyphicon-trash"v-on:click="EliminarAuto(au.id_auto)"></span>
+						<i class="edit icon" v-on:click="showAuto(au.id_auto)"></i>
+						<i class="remove icon" v-on:click="EliminarAuto(au.id_auto)"></i>
 						
 
 					</td>
 
 
 				</tr>
-				<button class="btn" value="Mostrar" onclick="mostrar()">Agregar Nuevo</button><br>
-				
-
+				<button class="ui red basic button" value="Mostrar" onclick="mostrar()">Agregar Nuevo</button><br>
+			
 
 
 
@@ -102,17 +111,20 @@
 <br><br>
 
 
-<div class="row animated zoomIn delay-0s col-xs-7 c" id="mostraryocultar">
+<div class="ui input ui grid" id="mostraryocultar">
 
 	<h3>Agregar</h3>
-	<br>
+	<div class="ten wide column">
+	
+		<input type="text"placeholder="Codigo" v-model="id_auto"><br><br>
+		<input type="text" placeholder="Nombre" id="nombre1" v-model="nombre"><br><br>
+		<input type="text" placeholder="Asientos" v-model="cantidad"><br><br>
+		<input type="text" placeholder="Activo" v-model="activo"><br><br>
+		<button class="ui primary button" v-on:click="AgregarNuevo()">Guardar</button>
+		<button class="ui button" value="Ocultar" onclick="ocultar()">Cancelar</button>
+	</div>
 
-		<input type="text" placeholder="Codigo" class="form-control" v-model="id_auto"><br>
-		<input type="text" placeholder="Nombre" class="form-control" v-model="nombre"><br>
-		<input type="text" placeholder="Asientos" class="form-control" v-model="cantidad"><br>
-		<input type="text" placeholder="Activo" class="form-control" v-model="activo"><br><br>
-		<button class="btn btn-success" v-on:click="AgregarNuevo()">Guardar</button>
-		<button class="btn btn-warning" value="Ocultar" onclick="ocultar()">Cancelar</button>
+		
   </div>
   <div>
 

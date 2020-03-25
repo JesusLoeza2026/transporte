@@ -3,19 +3,25 @@
 @section('contenido')
 <h2>DETALLES DE LOS CHOFERES</h2>
 <div id="chofer">
-<button class="btn btn-primary" v-on:click="showModal()">Agregar Nuevo</button><br><br>
+<button class="ui primary button" v-on:click="showModal()">Agregar Nuevo</button><br><br>
 
 <div class="row animated zoomIn delay-0s col-xs-7 c" v-if="editando==true" >
-
-	<h3> EDITANDO</h3>
+	<div class="ui grid">
+		<div class="six wide column">
+			<div class="ui form ">
+				<h3>AGREGAR</h3>
 	<br>
 
-		<input type="text" placeholder="Su turno" class="form-control" v-model="id_turno"><br>
-		<input type="text" placeholder="Nombre" class="form-control" v-model="nombre"><br>
-		<input type="text" placeholder="Apellido" class="form-control" v-model="apellido"><br>
-		<input type="text" placeholder="Activo" class="form-control" v-model="activo"><br><br>
-		<button class="btn btn-success" v-on:click="Guardar()">Guardar</button>
-		<button class="btn btn-warning" v-on:click="editando=false">Cancelar</button>
+		<input type="text" placeholder="Su turno" v-model="id_turno"><br>
+		<input type="text" placeholder="Nombre" v-model="nombre"><br>
+		<input type="text" placeholder="Apellido" v-model="apellido"><br>
+		<input type="text" placeholder="Activo" v-model="activo"><br><br>
+		<button class="ui primary button" v-on:click="Guardar()">Guardar</button>
+		<button class="ui button" v-on:click="editando=false">Cancelar</button>
+			</div>
+		</div>
+	</div>
+	
   </div>
   <div>
 
@@ -25,18 +31,22 @@
 
 </div>
 <div class="row animated zoomIn delay-0s col-xs-7 c" v-if="editando2==true" >
+	<div class="ui grid">
+		<div class="six wide column">
+			<div class="ui form ">
+				<h3>Actualizar</h3><br>
+					
 
-	<h3>Actualizar</h3>
-	<br>
-
-		<input type="text" placeholder="Su turno" class="form-control" v-model="id_turno"><br>
-		<input type="text" placeholder="Nombre" class="form-control" v-model="nombre"><br>
-		<input type="text" placeholder="Apellido" class="form-control" v-model="apellido"><br>
-		<input type="text" placeholder="Activo" class="form-control" v-model="activo"><br><br>
-		<button class="btn btn-success" v-on:click="actualizarA(auxiliar)">Actualizar</button>
-		<button class="btn btn-warning" v-on:click="editando=false">Cancelar</button>
-  </div>
-  <div>
+						<input type="text" placeholder="Su turno" v-model="id_turno"><br>
+						<input type="text" placeholder="Nombre" v-model="nombre"><br>
+						<input type="text" placeholder="Apellido" v-model="apellido"><br>
+						<input type="text" placeholder="Activo" v-model="activo"><br><br>
+						<button class="ui primary button" v-on:click="actualizarA(auxiliar)">Actualizar</button>
+						<button class="ui button" v-on:click="editando2=false">Cancelar</button>
+  	
+			</div>
+		</div>
+	</div>
 
 
 
@@ -50,7 +60,7 @@
 
 @{{turno}} --}}
 
-<table class="table  table-light table-bordered">
+<table class="ui celled table">
     <thead>
 		<tr>
             <td>Codigo</td>
@@ -69,8 +79,8 @@
 			<td>@{{ch.turno.turno}}</td> 
 				<td>
 						
-					<span class="glyphicon glyphicon-edit" v-on:click="show(ch.id_chofer)"></span>
-					<span class="glyphicon glyphicon-trash"v-on:click="EliminarChofer(ch.id_chofer)"></span>
+					<i class="edit icon" v-on:click="show(ch.id_chofer)"></i>
+					<i class="remove icon" v-on:click="EliminarChofer(ch.id_chofer)"></i>
 				</td>
 
 

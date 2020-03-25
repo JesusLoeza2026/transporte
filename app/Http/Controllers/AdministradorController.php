@@ -56,4 +56,6 @@ class AdministradorController extends Controller
 
         return Redirect::to('logi');
     }
+
+
 }

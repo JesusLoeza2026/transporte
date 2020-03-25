@@ -1,5 +1,6 @@
 var url = 'http://localhost/transporte/public/apiAuto';
-
+// var nombre1 = document.getElementById('nombre1');
+// var aa = nombre1.value;
 new Vue ({
     el:'#detalles',
     http: {
@@ -38,21 +39,30 @@ methods:{
         },
 
         AgregarNuevo:function(){
-        var auto={
-            id_auto:this.id_auto,
-            nombre:this.nombre,
-            cantidad:this.cantidad,
-            activo:this.activo,
-            id_chofer:this.id_chofer
-            }
-        this.$http.post(url,auto)
-        .then(function(json){
-            alert('agregado con exito');
-            this.getAuto();
-            // console.log(json);
             
-        });
-        
+        if(this.nombre === ""){
+            alert('favor de llenar algunos datos');
+        }else{
+            var auto={
+                id_auto:this.id_auto,
+                nombre:this.nombre,
+                cantidad:this.cantidad,
+                activo:this.activo,
+                id_chofer:this.id_chofer
+                }
+            this.$http.post(url,auto)
+            .then(function(json){
+                Swal.fire({        
+                    type: 'success',
+                    title: 'Éxito se agregado',
+                    text: '¡Perfecto!',        
+                });
+                this.getAuto();
+                // console.log(json);
+              
+            });
+        }
+    
         },
         showAuto:function(id){
             this.$http.get(url + '/' + id)

@@ -4,89 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/semantic.css">
+	<link rel="stylesheet" type="text/css" href="kitchensink.css">
+    <link rel="stylesheet" href="css/recurso.css">
+	<script src="js/jquery2.0.3.js"></script>
+	<script src="js/jquery.address-1.5.js"></script>
+  
+
+	<!-- Used with Tab History !-->
+	
+	<script src="js/semantic.js"></script>
     <link rel="stylesheet" href="css/animate.css">
-    <style>
-    
-    div.color{
-        position: relative;
-        top: 90px;
-        background-color: #B7CFEB;
-        height: 200px;
-        width: 450px;
-    }
-    .f{
-        font-family: Bahnschrift;
-    }
-    .m{
-        width: 500px;
-        position: relative;
-        left: 700px;
-        bottom: 150px;
-    }
-    </style>
+
     <title>Iniciar Seccion</title>
 </head>
-<body>
-
-
+<body id="sink">
+<div class="demo container">
     
-
-
-
-<div class="container">
-    <br><br>
     <h2 class="f animated zoomIn delay-0s">Iniciar Sesión</h2>
-
-    <div class="color animated zoomIn delay-0s">
-        <div class="col-xs-9">
-            <br>
-                    <form action="{{url('logi')}}" method="post">
+    <div class="ui grid">
+        <div class="six wide column">
+            <form action="{{url('logi')}}" method="post" class="ui form">
         
-                    @csrf
-                    <input type="text" placeholder="Usuario" class="form-control" name="usuario">
-                    <br>
-                    <input type="password" placeholder="Contraseña" class="form-control" name="password">
-                    <br>
-                    <input type="submit" value="Ingresar" class="btn btn-primary">
-                    <br>
-                    </form>
-            
+                @csrf
+                <div class="field">
+                    <input type="text" placeholder="Usuario"  name="usuario">
+                <br><br>
+                <input type="password" placeholder="Contraseña"  name="password">
+                <br><br>
+                <input type="submit" value="Ingresar" class="ui teal button">
+                <br>
+        
+                </div>
+                </form>
+                <a href="inicio"><input type="submit"  href="" value="regresar" class="ui teal button"></a>
+
         </div>
-        
-            <br>
-            <a href="inicio"><input type="submit"  href="" value="regresar" class="btn"></a>
-                    
-    </div>
-
-    <div class="m animated zoomIn delay-1s"> 
-
-        <img src="img/2.png" width="50%" alt="">
-
 
     </div>
-
-   
-
-
-
-
-       
-<br><br>
-
-
-
-
-
-
 </div>
-    
 
 
 
 
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="js/recurso.js"></script>
+
+
 </body>
 </html>
